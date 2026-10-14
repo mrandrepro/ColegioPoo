@@ -63,4 +63,7 @@ public class Profesor extends Persona {
         double base = salarioHora * horasDictadas;
         return base + base * porcentajePreparacion;
     }
+                public double calcularPrestaciones() {
+        return calcularPago() * 0.19;
+    }
 }
