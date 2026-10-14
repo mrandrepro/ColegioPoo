@@ -51,4 +51,8 @@ public class Profesor extends Persona {
     public void setHorasDictadas(double horasDictadas) {
         this.horasDictadas = horasDictadas;
     }
+
+    int calcularEdad() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
