@@ -261,46 +261,27 @@ public class VentanaColegio extends javax.swing.JFrame {
     } catch (ArrayIndexOutOfBoundsException ex) {
         JOptionPane.showMessageDialog(this, "La fecha debe tener el formato dd/mm/aaaa.");
     }
-}
+
   // TODO ad your handling code here:
     }//GEN-LAST:event_btnAgregarProfesorActionPerformed
 private void limpiarCampos() {
-txtNombre.setText("");
-txtDireccion.setText("");
-txtTelefono.setText("");
-txtFecha.setText("");
-txtCodigo.setText("");
-txtGrado.setText("");
-txtCedula.setText("");
-txtArea.setText("");
-txtSalarioHora.setText("");
-txtHoras.setText("");
-}
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        txtNombre.setText("");
+        txtDireccion.setText("");
+        txtTelefono.setText("");
+        txtFecha.setText("");
+        txtCodigo.setText("");
+        txtGrado.setText("");
+        txtCedula.setText("");
+        txtArea.setText("");
+        txtSalarioHora.setText("");
+        txtHoras.setText("");
+    } 
+public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> new VentanaColegio().setVisible(true));
     }
 
+
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarEstudiante;
     private javax.swing.JButton btnAgregarProfesor;
