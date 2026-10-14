@@ -41,4 +41,17 @@ public class Colegio {
     }
     return sb.toString();
 }
+    public String reporteProfesoresSinOrdenar() {
+    if (listaProfesores == null || listaProfesores.isEmpty()) {
+        return "No hay profesores registrados.";
+    }
+    StringBuilder sb = new StringBuilder("=== REPORTE DE PROFESORES ===\n\n");
+    for (Profesor p : listaProfesores) {
+        sb.append(p.toString())
+          .append("\nPago Total: $").append(p.calcularPago())
+          .append("\nPrestaciones: $").append(p.calcularPrestaciones())
+          .append("\n-------------------------------\n");
+    }
+    return sb.toString();
+}
 }
