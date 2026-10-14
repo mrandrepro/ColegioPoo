@@ -63,7 +63,7 @@ public class Profesor extends Persona {
         return calcularPago() * 0.19;
     }
 
-    int calcularEdad() {
+    public int calcularEdad() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
       

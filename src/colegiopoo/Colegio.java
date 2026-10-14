@@ -31,4 +31,14 @@ public class Colegio {
     public void agregar(Profesor p) {
         profesores.add(p);
     }
+    public String reporteEstudiantes() {
+    if (listaEstudiantes == null || listaEstudiantes.isEmpty()) {
+        return "No hay estudiantes registrados.";
+    }
+    StringBuilder sb = new StringBuilder("=== REPORTE DE ESTUDIANTES ===\n\n");
+    for (Estudiante e : listaEstudiantes) {
+        sb.append(e.toString()).append("\n-------------------------------\n");
+    }
+    return sb.toString();
+}
 }
