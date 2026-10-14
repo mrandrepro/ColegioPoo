@@ -51,11 +51,7 @@ public class Profesor extends Persona {
     public void setHorasDictadas(double horasDictadas) {
         this.horasDictadas = horasDictadas;
     }
-
-    int calcularEdad() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-        public double calcularPago() {
+     public double calcularPago() {
         double base = salarioHora * horasDictadas;
         return base + base * 0.30;
     }
@@ -66,4 +62,9 @@ public class Profesor extends Persona {
                 public double calcularPrestaciones() {
         return calcularPago() * 0.19;
     }
+
+    int calcularEdad() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+      
 }

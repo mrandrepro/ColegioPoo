@@ -234,18 +234,35 @@ public class VentanaColegio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarEstudianteActionPerformed
 
     private void btnAgregarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProfesorActionPerformed
-       try {
-        Profesor p = new Profesor(txtNombre.getText(), txtDireccion.getText(),
-                txtTelefono.getText(), txtFecha.getText(), txtCedula.getText(),
-                txtArea.getText(), Double.parseDouble(txtSalarioHora.getText()),
-                Double.parseDouble(txtHoras.getText()));
+       
+    try {
+        Profesor p = new Profesor(
+            txtNombre.getText(),
+            txtDireccion.getText(),
+            txtTelefono.getText(),
+            txtFecha.getText(),
+            txtCedula.getText(),
+            txtArea.getText(),
+            Double.parseDouble(txtSalarioHora.getText()),
+            Double.parseDouble(txtHoras.getText())
+        );
+
+        if (p.calcularEdad() < 18) {
+            JOptionPane.showMessageDialog(this, "El profesor debe ser mayor de edad.");
+            return;
+        }
+
         colegio.agregar(p);
-        JOptionPane.showMessageDialog(this, "Profesor registrado.");
+        JOptionPane.showMessageDialog(this, "Profesor registrado con éxito.");
         limpiarCampos();
+
     } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Revisa salario y horas: deben ser números.");
+        JOptionPane.showMessageDialog(this, "Revisa los campos numéricos (salario por hora u horas dictadas).");
+    } catch (ArrayIndexOutOfBoundsException ex) {
+        JOptionPane.showMessageDialog(this, "La fecha debe tener el formato dd/mm/aaaa.");
     }
-}  // TODO ad your handling code here:
+}
+  // TODO ad your handling code here:
     }//GEN-LAST:event_btnAgregarProfesorActionPerformed
 private void limpiarCampos() {
 txtNombre.setText("");
