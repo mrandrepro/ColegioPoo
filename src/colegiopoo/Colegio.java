@@ -54,7 +54,7 @@ public class Colegio {
     }
     return sb.toString();
 }
-    public String reporteProfesores() {
+   public String reporteProfesores() {
     if (profesores == null || profesores.isEmpty()) {
         return "No hay profesores registrados.";
     }
@@ -62,13 +62,17 @@ public class Colegio {
     java.util.List<Profesor> listaOrdenada = new java.util.ArrayList<>(profesores);
     listaOrdenada.sort((p1, p2) -> Double.compare(p2.calcularPago(), p1.calcularPago()));
 
+    double totalPrestaciones = 0;
     StringBuilder sb = new StringBuilder("=== REPORTE DE PROFESORES (ORDENADO DE MAYOR A MENOR SALARIO) ===\n\n");
     for (Profesor p : listaOrdenada) {
+        double prestaciones = p.calcularPrestaciones();
+        totalPrestaciones += prestaciones;
         sb.append(p.toString())
           .append("\nPago Total: $").append(p.calcularPago())
-          .append("\nPrestaciones: $").append(p.calcularPrestaciones())
+          .append("\nPrestaciones Sociales: $").append(prestaciones)
           .append("\n-------------------------------\n");
     }
+    sb.append("\nTOTAL PRESTACIONES SOCIALES A CUBRIR: $").append(totalPrestaciones);
     return sb.toString();
 }
 }
